@@ -9,13 +9,14 @@ canvas.height = 400;
 
 var ctx = canvas.getContext('2d');
 
-var r1 = new Rect(25, 50, 20, 20);
-r1.setGrav(0, .1);
-r1.mass = 25;
+var rect = new Rect(25, 50, 20, 20);
+rect.setGrav(0, .1);
+rect.mass = 25;
 
 function update() {
-  r1.updatePHY();
-  r1.draw(ctx);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  rect.updatePHY();
+  rect.draw(ctx);
   ctx.stroke();
   requestAnimationFrame(update);
 }
