@@ -36,7 +36,7 @@ class Vector {
   }
 }
 
-class Particle {
+class Body {
   constructor(x, y) {
     if(x == undefined || y == undefined) {
       this.pos = new Vector();
@@ -51,6 +51,7 @@ class Particle {
     this.crossArea = 1;
     this.shape = -1;
     this.isStatic = false;
+    this.elastic = 1; // 0 to 1
   }
   updatePHY() {
     if(!this.static) {
@@ -60,7 +61,10 @@ class Particle {
       var newAcc = new Vector(this.grav.x, this.grav.y).scale(this.mass);
       //Fd = .5*p*v^2*Cd*A
       var drag = new Vector((this.vel.x < 0 ? 1:-1)*this.vel.x*this.vel.x, (this.vel.y < 0 ? 1:-1)*this.vel.y*this.vel.y).scale(.5*PHY.MASS_DENSITY*this.dragCoeff);
-      newAcc.addVector(drag).scale(1/this.mass);
+      newAcc.addVector(drag);
+      // var contact = new Vector(-this.grav.x, -this.grav.y);
+      // newAcc.addVector(contact);
+      newAcc.scale(1 / this.mass);
       this.acc.addVector(newAcc);
     }
   }

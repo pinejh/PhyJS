@@ -9,15 +9,17 @@ canvas.height = 400;
 
 var ctx = canvas.getContext('2d');
 
-var rect = new Rect(25, 50, 20, 20);
-rect.setGrav(0, .1);
-rect.mass = 25;
+var grav = new Vector(0, .15);
+var scene = new Scene(grav);
+scene.draw = true;
+
+var circ = new Circle(50, 50, 10);
+circ.mass = 25;
+scene.add(circ);
 
 function update() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  rect.updatePHY();
-  rect.draw(ctx);
-  ctx.stroke();
+  scene.step(ctx);
   requestAnimationFrame(update);
 }
 ```

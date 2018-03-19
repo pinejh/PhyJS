@@ -1,22 +1,3 @@
-class Body extends Particle {
-  constuctor(x, y) {
-    super.apply(x, y);
-  }
-}
-Object.assign(Body, Particle);
-
-/*class Polygon extends Body {
-  constructor(x, y, points, radius) {
-    super(x, y);
-    this.pointCount = points;
-    this.points = new Array(points).fill(new Vector(x, y), 0, points);
-    this.radius;
-    for(var i = 0; i < Math.PI*2; i += Math.PI*2/this.pointCount) {
-
-    }
-  }
-}*/
-
 class Rect extends Body {
   constructor(x, y, w, h) {
     super(x, y);
