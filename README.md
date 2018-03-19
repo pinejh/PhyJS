@@ -1,6 +1,8 @@
 # PhyJS
 A 2D Javascript Physics Engine.
 
+#### [JSDocs for PhyJS](./out/index.html) 
+
 #### Setup:
 ```javascript
 var canvas = document.getElementById('main');
