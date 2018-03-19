@@ -1,7 +1,7 @@
 # PhyJS
 A 2D Javascript Physics Engine.
 
-#### [JSDocs for PhyJS](./out/index.html) 
+#### [JSDocs for PhyJS](https://pinejh.github.io/PhyJS) 
 
 #### Setup:
 ```javascript
